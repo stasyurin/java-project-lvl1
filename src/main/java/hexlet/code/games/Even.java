@@ -4,11 +4,14 @@ import org.apache.commons.lang3.RandomUtils;
 import java.util.Scanner;
 
 public class Even {
+    static final int POINTS_TO_WIN = 3;
+    static final int LOWER_RANDOM_BOUND = 1;
+    static final int UPPER_RANDOM_BOUND = 100;
+
     public static void startGame() {
-        int pointsToWin = 3;
-        for (int i = 0; i < pointsToWin; i++) {
+        for (int i = 0; i < POINTS_TO_WIN; i++) {
             System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
-            var question = RandomUtils.nextInt(1, 100);
+            var question = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
             System.out.println("Question: " + question);
             System.out.print("Your answer: ");
             Scanner in = new Scanner(System.in);

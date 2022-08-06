@@ -18,6 +18,8 @@ public class App {
         switch (noOfGame) {
             case "1" -> Cli.greet();
             case "2" -> Even.startGame();
+            default -> {
+            }
         }
     }
 }
