@@ -10,9 +10,9 @@ public class App {
 
         System.out.print("Your choice: ");
         Scanner in = new Scanner(System.in);
-        var noOfGame = Integer.parseInt(in.nextLine());
+        var noOfGame = in.nextLine();
         System.out.println();
-        if (noOfGame == 1) {
+        if (noOfGame.equals("1")) {
             Cli.greet();
         }
     }
