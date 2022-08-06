@@ -18,7 +18,10 @@ public class App {
         System.out.println();
         switch (noOfGame) {
             case "1" -> cli.init();
-            case "2" -> Even.startGame();
+            case "2" -> {
+                cli.init();
+                Even.startGame(cli);
+            }
             default -> {
             }
         }
