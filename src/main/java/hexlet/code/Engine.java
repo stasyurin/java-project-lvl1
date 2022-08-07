@@ -9,7 +9,7 @@ import java.util.Scanner;
 public final class Engine {
     public static final int POINTS_TO_WIN = 3;
     public static final int LOWER_RANDOM_BOUND = 1;
-    public static final int UPPER_RANDOM_BOUND = 10;
+    public static final int UPPER_RANDOM_BOUND = 101;
 
     private String rules;
     private String question;
