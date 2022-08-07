@@ -10,6 +10,7 @@ public class App {
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
         System.out.println("0 - Exit");
 
         System.out.print("Your choice: ");
@@ -23,14 +24,12 @@ public class App {
         if (noOfGame.equals("1")) {
             return;
         }
-        GameName gameName;
-        if (noOfGame.equals("3")) {
-            gameName = GameName.Calc;
-        } else if (noOfGame.equals("4")) {
-            gameName = GameName.GCD;
-        } else {
-            gameName = GameName.Even;
-        }
+        GameName gameName = switch (noOfGame) {
+            default -> GameName.Even;
+            case "3" -> GameName.Calc;
+            case "4" -> GameName.GCD;
+            case "5" -> GameName.Progression;
+        };
         Engine engine = new Engine();
         engine.startGame(gameName, cli);
     }
