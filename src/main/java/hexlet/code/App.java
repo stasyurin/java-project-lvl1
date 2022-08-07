@@ -1,6 +1,5 @@
 package hexlet.code;
 
-import hexlet.code.games.Game;
 import hexlet.code.games.GameName;
 
 import java.util.Scanner;
@@ -31,7 +30,7 @@ public class App {
         } else {
             gameName = GameName.Even;
         }
-        Game game = new Game();
-        game.startGame(gameName, cli);
+        Engine engine = new Engine();
+        engine.startGame(gameName, cli);
     }
 }

@@ -1,12 +1,13 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
 import org.apache.commons.lang3.RandomUtils;
 
 public class Even {
-    public static void fillIteration(Game game) {
-        var question = RandomUtils.nextInt(Game.LOWER_RANDOM_BOUND, Game.UPPER_RANDOM_BOUND);
-        game.setQuestion(Integer.toString(question));
-        game.setRightAnswer(Even.isEven(question) ? "yes" : "no");
+    public static void fillIteration(Engine engine) {
+        var question = RandomUtils.nextInt(Engine.LOWER_RANDOM_BOUND, Engine.UPPER_RANDOM_BOUND);
+        engine.setQuestion(Integer.toString(question));
+        engine.setRightAnswer(Even.isEven(question) ? "yes" : "no");
     }
 
     static boolean isEven(int n) {

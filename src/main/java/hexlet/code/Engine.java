@@ -1,13 +1,15 @@
-package hexlet.code.games;
+package hexlet.code;
 
-import hexlet.code.Cli;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.GameName;
 
 import java.util.Scanner;
 
-public final class Game {
-    static final int POINTS_TO_WIN = 3;
-    static final int LOWER_RANDOM_BOUND = 1;
-    static final int UPPER_RANDOM_BOUND = 10;
+public final class Engine {
+    public static final int POINTS_TO_WIN = 3;
+    public static final int LOWER_RANDOM_BOUND = 1;
+    public static final int UPPER_RANDOM_BOUND = 10;
 
     private String rules;
     private String question;
