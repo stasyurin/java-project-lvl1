@@ -2,7 +2,6 @@ package hexlet.code;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
-import hexlet.code.games.GameName;
 
 import java.util.Scanner;
 
