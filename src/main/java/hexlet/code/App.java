@@ -1,7 +1,5 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
 import hexlet.code.games.Game;
 import hexlet.code.games.GameName;
 
@@ -28,9 +26,10 @@ public class App {
             return;
         }
         GameName gameName;
-        switch (noOfGame) {
-            default -> gameName = GameName.Even;
-            case "3" -> gameName = GameName.Calc;
+        if ("3".equals(noOfGame)) {
+            gameName = GameName.Calc;
+        } else {
+            gameName = GameName.Even;
         }
         Game game = new Game();
         game.startGame(gameName, cli);

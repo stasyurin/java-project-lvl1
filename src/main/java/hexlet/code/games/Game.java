@@ -4,14 +4,14 @@ import hexlet.code.Cli;
 
 import java.util.Scanner;
 
-public class Game {
+public final class Game {
     static final int POINTS_TO_WIN = 3;
     static final int LOWER_RANDOM_BOUND = 1;
     static final int UPPER_RANDOM_BOUND = 10;
 
-    String rules;
-    String question;
-    String rightAnswer;
+    private String rules;
+    private String question;
+    private String rightAnswer;
 
     public void startGame(GameName gameName, Cli cli) {
         initGame(gameName);
@@ -33,7 +33,7 @@ public class Game {
         System.out.println("Congratulations, " + cli.getName() + "!");
     }
 
-    void initGame (GameName gameName) {
+    void initGame(GameName gameName) {
         if (gameName == GameName.Even) {
             this.rules = "Answer 'yes' if number even otherwise answer 'no'.";
         } else if (gameName == GameName.Calc) {
@@ -41,7 +41,7 @@ public class Game {
         }
     }
 
-    void createIteration (GameName gameName) {
+    void createIteration(GameName gameName) {
         if (gameName == GameName.Even) {
             Even.fillIteration(this);
         } else if (gameName == GameName.Calc) {
@@ -49,11 +49,11 @@ public class Game {
         }
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
+    public void setQuestion(String pQuestion) {
+        this.question = pQuestion;
     }
 
-    public void setRightAnswer(String rightAnswer) {
-        this.rightAnswer = rightAnswer;
+    public void setRightAnswer(String pRightAnswer) {
+        this.rightAnswer = pRightAnswer;
     }
 }
