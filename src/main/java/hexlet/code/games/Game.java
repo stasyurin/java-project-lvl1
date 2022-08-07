@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.Cli;
-import org.apache.commons.lang3.RandomUtils;
 
 import java.util.Scanner;
 
@@ -44,9 +43,7 @@ public class Game {
 
     void createIteration (GameName gameName) {
         if (gameName == GameName.Even) {
-            var question = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
-            this.question = Integer.toString(question);
-            this.rightAnswer = Even.isEven(question) ? "yes" : "no";
+            Even.fillIteration(this);
         } else if (gameName == GameName.Calc) {
             Calc.fillIteration(this);
         }
