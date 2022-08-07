@@ -11,7 +11,7 @@ public class Game {
     static final int UPPER_RANDOM_BOUND = 10;
 
     String rules;
-    int question;
+    String question;
     String rightAnswer;
 
     public void startGame(GameName gameName, Cli cli) {
@@ -44,10 +44,19 @@ public class Game {
 
     void createIteration (GameName gameName) {
         if (gameName == GameName.Even) {
-            this.question = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
+            var question = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
+            this.question = Integer.toString(question);
             this.rightAnswer = Even.isEven(question) ? "yes" : "no";
         } else if (gameName == GameName.Calc) {
-            this.rules = "What is the result of the expression?";
+            Calc.fillIteration(this);
         }
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    public void setRightAnswer(String rightAnswer) {
+        this.rightAnswer = rightAnswer;
     }
 }
