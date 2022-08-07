@@ -10,8 +10,8 @@ public class Even {
     static final int UPPER_RANDOM_BOUND = 100;
 
     public static void startGame(Cli cli) {
+        System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
         for (int i = 0; i < POINTS_TO_WIN; i++) {
-            System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
             var question = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
             System.out.println("Question: " + question);
             System.out.print("Your answer: ");
