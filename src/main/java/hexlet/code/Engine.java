@@ -1,9 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Progression;
+import hexlet.code.games.*;
 
 import java.util.Scanner;
 
@@ -45,6 +42,8 @@ public final class Engine {
             this.rules = "Find the greatest common divisor of given numbers.";
         } else if (gameName == GameName.Progression) {
             this.rules = "What number is missing in the progression?";
+        } else if (gameName == GameName.Prime) {
+            this.rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         }
     }
 
@@ -57,6 +56,8 @@ public final class Engine {
             GCD.fillIteration(this);
         } else if (gameName == GameName.Progression) {
             Progression.fillIteration(this);
+        } else if (gameName == GameName.Prime) {
+            Prime.fillIteration(this);
         }
     }
 

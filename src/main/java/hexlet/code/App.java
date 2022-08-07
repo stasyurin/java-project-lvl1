@@ -11,6 +11,7 @@ public class App {
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
         System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
         System.out.println("0 - Exit");
 
         System.out.print("Your choice: ");
@@ -29,6 +30,7 @@ public class App {
             case "3" -> GameName.Calc;
             case "4" -> GameName.GCD;
             case "5" -> GameName.Progression;
+            case "6" -> GameName.Prime;
         };
         Engine engine = new Engine();
         engine.startGame(gameName, cli);

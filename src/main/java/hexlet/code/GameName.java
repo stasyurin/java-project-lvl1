@@ -4,5 +4,6 @@ public enum GameName {
     Even,
     Calc,
     GCD,
-    Progression
+    Progression,
+    Prime
 }
