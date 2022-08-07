@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
 
 import java.util.Scanner;
 
@@ -39,6 +40,8 @@ public final class Engine {
             this.rules = "Answer 'yes' if number even otherwise answer 'no'.";
         } else if (gameName == GameName.Calc) {
             this.rules = "What is the result of the expression?";
+        } else if (gameName == GameName.GCD) {
+            this.rules = "Find the greatest common divisor of given numbers.";
         }
     }
 
@@ -47,6 +50,8 @@ public final class Engine {
             Even.fillIteration(this);
         } else if (gameName == GameName.Calc) {
             Calc.fillIteration(this);
+        } else if (gameName == GameName.GCD) {
+            GCD.fillIteration(this);
         }
     }
 

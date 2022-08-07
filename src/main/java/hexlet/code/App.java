@@ -9,6 +9,7 @@ public class App {
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
+        System.out.println("4 - GCD");
         System.out.println("0 - Exit");
 
         System.out.print("Your choice: ");
@@ -23,8 +24,10 @@ public class App {
             return;
         }
         GameName gameName;
-        if ("3".equals(noOfGame)) {
+        if (noOfGame.equals("3")) {
             gameName = GameName.Calc;
+        } else if (noOfGame.equals("4")) {
+            gameName = GameName.GCD;
         } else {
             gameName = GameName.Even;
         }
