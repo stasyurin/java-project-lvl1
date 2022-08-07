@@ -8,3 +8,6 @@
 
 ### Even
 [![asciicast](https://asciinema.org/a/umEFUF2YtKkpxmSPfoMliFUvE.svg)](https://asciinema.org/a/umEFUF2YtKkpxmSPfoMliFUvE)
+
+### Calc
+[![asciicast](https://asciinema.org/a/x6wnOLzh7fWkPviP8ntEYgsT3.svg)](https://asciinema.org/a/x6wnOLzh7fWkPviP8ntEYgsT3)
