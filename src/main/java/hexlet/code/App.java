@@ -17,17 +17,14 @@ public class App {
         System.out.print("Your choice: ");
         Scanner in = new Scanner(System.in);
         var noOfGame = in.nextLine();
+        if (noOfGame.equals("0")) {
+            return;
+        }
         System.out.println();
+        cli.init();
         switch (noOfGame) {
-            case "1" -> cli.init();
-            case "2" -> {
-                cli.init();
-                Even.startGame(cli);
-            }
-            case "3" -> {
-                cli.init();
-                Calc.startGame(cli);
-            }
+            case "2" -> Even.startGame(cli);
+            case "3" -> Calc.startGame(cli);
             default -> {
             }
         }
