@@ -11,3 +11,6 @@
 
 ### Calc
 [![asciicast](https://asciinema.org/a/x6wnOLzh7fWkPviP8ntEYgsT3.svg)](https://asciinema.org/a/x6wnOLzh7fWkPviP8ntEYgsT3)
+
+### GCD
+[![asciicast](https://asciinema.org/a/Plbf3D06mEgWxLU8xxb2trD8e.svg)](https://asciinema.org/a/Plbf3D06mEgWxLU8xxb2trD8e)
