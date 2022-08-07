@@ -2,6 +2,8 @@ package hexlet.code;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
+import hexlet.code.games.Game;
+import hexlet.code.games.GameName;
 
 import java.util.Scanner;
 
@@ -22,11 +24,15 @@ public class App {
         }
         System.out.println();
         cli.init();
-        switch (noOfGame) {
-            case "2" -> Even.startGame(cli);
-            case "3" -> Calc.startGame(cli);
-            default -> {
-            }
+        if (noOfGame.equals("1")) {
+            return;
         }
+        GameName gameName;
+        switch (noOfGame) {
+            default -> gameName = GameName.Even;
+            case "3" -> gameName = GameName.Calc;
+        }
+        Game game = new Game();
+        game.startGame(gameName, cli);
     }
 }
