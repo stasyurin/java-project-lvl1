@@ -21,7 +21,9 @@ public class App {
             return;
         }
         System.out.println();
-        cli.init();
+        cli.printWelcomeMsg();
+        var clientName = cli.askName();
+        cli.printGreeting(clientName);
         if (noOfGame.equals("1")) {
             return;
         }
@@ -34,8 +36,8 @@ public class App {
             default -> null;
         };
         if (gameName != null) {
-            Engine engine = new Engine();
-            engine.startGame(gameName, cli);
+            Engine engine = new Engine(clientName);
+            engine.startGame(gameName);
         }
     }
 }

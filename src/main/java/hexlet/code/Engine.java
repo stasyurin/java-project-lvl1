@@ -16,8 +16,13 @@ public final class Engine {
     private String rules;
     private String question;
     private String rightAnswer;
+    private final String clientName;
 
-    public void startGame(GameName gameName, Cli cli) {
+    Engine(String pClientName) {
+        this.clientName = pClientName;
+    }
+
+    public void startGame(GameName gameName) {
         initGame(gameName);
         System.out.println(rules);
         for (int i = 0; i < POINTS_TO_WIN; i++) {
@@ -30,11 +35,11 @@ public final class Engine {
                 System.out.println("Correct!");
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + rightAnswer + "'");
-                System.out.println("Let's try again, " + cli.getName() + "!");
+                System.out.println("Let's try again, " + clientName + "!");
                 return;
             }
         }
-        System.out.println("Congratulations, " + cli.getName() + "!");
+        System.out.println("Congratulations, " + clientName + "!");
     }
 
     void initGame(GameName gameName) {
