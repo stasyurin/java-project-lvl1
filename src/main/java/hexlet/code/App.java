@@ -26,13 +26,16 @@ public class App {
             return;
         }
         GameName gameName = switch (noOfGame) {
-            default -> GameName.Even;
+            case "2" -> GameName.Even;
             case "3" -> GameName.Calc;
             case "4" -> GameName.GCD;
             case "5" -> GameName.Progression;
             case "6" -> GameName.Prime;
+            default -> null;
         };
-        Engine engine = new Engine();
-        engine.startGame(gameName, cli);
+        if (gameName != null) {
+            Engine engine = new Engine();
+            engine.startGame(gameName, cli);
+        }
     }
 }
