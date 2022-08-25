@@ -1,10 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Progression;
-import hexlet.code.games.Prime;
+import hexlet.code.games.*;
 
 import java.util.Scanner;
 
@@ -36,11 +32,11 @@ public class App {
         }
         String[] gameInfo = new String[GAME_INFO_LENGTH];
         switch (noOfGame) {
-            case "2" -> Even.gameInfo(gameInfo);
+            case "2" -> YesNoGames.gameInfo(gameInfo, "Even");
             case "3" -> Calc.gameInfo(gameInfo);
             case "4" -> GCD.gameInfo(gameInfo);
             case "5" -> Progression.gameInfo(gameInfo);
-            case "6" -> Prime.gameInfo(gameInfo);
+            case "6" -> YesNoGames.gameInfo(gameInfo, "Prime");
             default -> {
                 return;
             }
