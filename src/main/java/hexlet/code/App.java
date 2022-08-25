@@ -12,7 +12,6 @@ public class App {
     public static final int GAME_INFO_LENGTH = 3;
 
     public static void main(String[] args) {
-        var cli = new Cli();
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
@@ -29,9 +28,9 @@ public class App {
             return;
         }
         System.out.println();
-        cli.printWelcomeMsg();
-        var clientName = cli.askName();
-        cli.printGreeting(clientName);
+        Cli.printWelcomeMsg();
+        var clientName = Cli.askName();
+        Cli.printGreeting(clientName);
         if (noOfGame.equals("1")) {
             return;
         }
