@@ -1,6 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
+import hexlet.code.Constants;
 import org.apache.commons.lang3.RandomUtils;
 
 public class Calc {
@@ -9,8 +9,8 @@ public class Calc {
     public static void gameInfo(String[] gameInfo) {
         var rules = "What is the result of the expression?";
         gameInfo[0] = rules;
-        var operand1 = RandomUtils.nextInt(Engine.LOWER_RANDOM_BOUND, Engine.UPPER_RANDOM_BOUND);
-        var operand2 = RandomUtils.nextInt(Engine.LOWER_RANDOM_BOUND, Engine.UPPER_RANDOM_BOUND);
+        var operand1 = RandomUtils.nextInt(Constants.LOWER_RANDOM_BOUND, Constants.UPPER_RANDOM_BOUND);
+        var operand2 = RandomUtils.nextInt(Constants.LOWER_RANDOM_BOUND, Constants.UPPER_RANDOM_BOUND);
         var operation = RandomUtils.nextInt(0, NO_OF_OPERATIONS);
         int answer;
         String question;

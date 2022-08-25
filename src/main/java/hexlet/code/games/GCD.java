@@ -1,14 +1,14 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
+import hexlet.code.Constants;
 import org.apache.commons.lang3.RandomUtils;
 
 public class GCD {
     public static void gameInfo(String[] gameInfo) {
         var rules = "Find the greatest common divisor of given numbers.";
         gameInfo[0] = rules;
-        var num1 = RandomUtils.nextInt(Engine.LOWER_RANDOM_BOUND, Engine.UPPER_RANDOM_BOUND);
-        var num2 = RandomUtils.nextInt(Engine.LOWER_RANDOM_BOUND, Engine.UPPER_RANDOM_BOUND);
+        var num1 = RandomUtils.nextInt(Constants.LOWER_RANDOM_BOUND, Constants.UPPER_RANDOM_BOUND);
+        var num2 = RandomUtils.nextInt(Constants.LOWER_RANDOM_BOUND, Constants.UPPER_RANDOM_BOUND);
         var question = num1 + " " + num2;
         gameInfo[1] = question;
         var answer = gcd(num1, num2);
