@@ -4,7 +4,7 @@ import org.apache.commons.lang3.RandomUtils;
 
 import static hexlet.code.Constants.LOWER_RANDOM_BOUND;
 import static hexlet.code.Constants.UPPER_RANDOM_BOUND;
-import static hexlet.code.Constants.GAME_INFO_RULES_ID;
+import static hexlet.code.Constants.RULES_ID;
 
 public class Progression {
     static final int PROGRESSION_LENGTH = 10;
@@ -12,7 +12,7 @@ public class Progression {
     static final int UPPER_STEP_BOUND = 6;
 
     public static void gameInfo(String[] gameInfo) {
-        gameInfo[GAME_INFO_RULES_ID] = rules();
+        gameInfo[RULES_ID] = rules();
         var progression = generateProgression();
         var missNumberIndex = RandomUtils.nextInt(1, progression.length - 1);
         var question = new StringBuilder();
