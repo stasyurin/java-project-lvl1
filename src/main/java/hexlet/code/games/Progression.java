@@ -5,6 +5,8 @@ import org.apache.commons.lang3.RandomUtils;
 import static hexlet.code.Constants.LOWER_RANDOM_BOUND;
 import static hexlet.code.Constants.UPPER_RANDOM_BOUND;
 import static hexlet.code.Constants.RULES_ID;
+import static hexlet.code.Constants.QUESTION_ID;
+import static hexlet.code.Constants.ANSWER_ID;
 
 public class Progression {
     static final int PROGRESSION_LENGTH = 10;
@@ -24,9 +26,9 @@ public class Progression {
                 question.append(" ");
             }
         }
-        gameInfo[1] = question.toString();
+        gameInfo[QUESTION_ID] = question.toString();
         var answer = Integer.toString(progression[missNumberIndex]);
-        gameInfo[2] = answer;
+        gameInfo[ANSWER_ID] = answer;
     }
     static String rules() {
         return "What number is missing in the progression?";

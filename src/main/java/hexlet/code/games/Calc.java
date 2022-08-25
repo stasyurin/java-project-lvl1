@@ -5,6 +5,8 @@ import org.apache.commons.lang3.RandomUtils;
 import static hexlet.code.Constants.LOWER_RANDOM_BOUND;
 import static hexlet.code.Constants.UPPER_RANDOM_BOUND;
 import static hexlet.code.Constants.RULES_ID;
+import static hexlet.code.Constants.QUESTION_ID;
+import static hexlet.code.Constants.ANSWER_ID;
 
 public class Calc {
     static final int NO_OF_OPERATIONS = 3;
@@ -30,8 +32,8 @@ public class Calc {
                 question = operand1 + " * " + operand2;
             }
         }
-        gameInfo[1] = question;
-        gameInfo[2] = Integer.toString(answer);
+        gameInfo[QUESTION_ID] = question;
+        gameInfo[ANSWER_ID] = Integer.toString(answer);
     }
     static String rules() {
         return "What is the result of the expression?";

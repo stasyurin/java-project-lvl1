@@ -5,6 +5,8 @@ import org.apache.commons.lang3.RandomUtils;
 import static hexlet.code.Constants.LOWER_RANDOM_BOUND;
 import static hexlet.code.Constants.UPPER_RANDOM_BOUND;
 import static hexlet.code.Constants.RULES_ID;
+import static hexlet.code.Constants.QUESTION_ID;
+import static hexlet.code.Constants.ANSWER_ID;
 
 public class GCD {
     public static void gameInfo(String[] gameInfo) {
@@ -12,9 +14,9 @@ public class GCD {
         var num1 = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
         var num2 = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
         var question = num1 + " " + num2;
-        gameInfo[1] = question;
+        gameInfo[QUESTION_ID] = question;
         var answer = gcd(num1, num2);
-        gameInfo[2] = Integer.toString(answer);
+        gameInfo[ANSWER_ID] = Integer.toString(answer);
     }
     static String rules() {
         return "Find the greatest common divisor of given numbers.";

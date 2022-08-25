@@ -5,14 +5,16 @@ import org.apache.commons.lang3.RandomUtils;
 import static hexlet.code.Constants.LOWER_RANDOM_BOUND;
 import static hexlet.code.Constants.UPPER_RANDOM_BOUND;
 import static hexlet.code.Constants.RULES_ID;
+import static hexlet.code.Constants.QUESTION_ID;
+import static hexlet.code.Constants.ANSWER_ID;
 
 public class Prime {
     public static void gameInfo(String[] gameInfo) {
         gameInfo[RULES_ID] = rules();
         var question = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
-        gameInfo[1] = Integer.toString(question);
+        gameInfo[QUESTION_ID] = Integer.toString(question);
         var answer = isPrime(question) ? "yes" : "no";
-        gameInfo[2] = answer;
+        gameInfo[ANSWER_ID] = answer;
     }
     static String rules() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
