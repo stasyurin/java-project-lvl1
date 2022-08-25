@@ -3,9 +3,11 @@ package hexlet.code.games;
 import hexlet.code.Constants;
 import org.apache.commons.lang3.RandomUtils;
 
+import static hexlet.code.Constants.GAME_INFO_RULES_ID;
+
 public class Even {
     public static void gameInfo(String[] gameInfo) {
-        gameInfo[0] = rules();
+        gameInfo[GAME_INFO_RULES_ID] = rules();
         var question = RandomUtils.nextInt(Constants.LOWER_RANDOM_BOUND, Constants.UPPER_RANDOM_BOUND);
         gameInfo[1] = Integer.toString(question);
         var answer = isEven(question) ? "yes" : "no";

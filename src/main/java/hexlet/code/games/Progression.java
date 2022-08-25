@@ -3,13 +3,15 @@ package hexlet.code.games;
 import hexlet.code.Constants;
 import org.apache.commons.lang3.RandomUtils;
 
+import static hexlet.code.Constants.GAME_INFO_RULES_ID;
+
 public class Progression {
     static final int PROGRESSION_LENGTH = 10;
     static final int LOWER_STEP_BOUND = 1;
     static final int UPPER_STEP_BOUND = 6;
 
     public static void gameInfo(String[] gameInfo) {
-        gameInfo[0] = rules();
+        gameInfo[GAME_INFO_RULES_ID] = rules();
         var progression = generateProgression();
         var missNumberIndex = RandomUtils.nextInt(1, progression.length - 1);
         var question = new StringBuilder();
