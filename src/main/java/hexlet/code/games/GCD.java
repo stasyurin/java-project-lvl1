@@ -1,15 +1,16 @@
 package hexlet.code.games;
 
-import hexlet.code.Constants;
 import org.apache.commons.lang3.RandomUtils;
 
+import static hexlet.code.Constants.LOWER_RANDOM_BOUND;
+import static hexlet.code.Constants.UPPER_RANDOM_BOUND;
 import static hexlet.code.Constants.GAME_INFO_RULES_ID;
 
 public class GCD {
     public static void gameInfo(String[] gameInfo) {
         gameInfo[GAME_INFO_RULES_ID] = rules();
-        var num1 = RandomUtils.nextInt(Constants.LOWER_RANDOM_BOUND, Constants.UPPER_RANDOM_BOUND);
-        var num2 = RandomUtils.nextInt(Constants.LOWER_RANDOM_BOUND, Constants.UPPER_RANDOM_BOUND);
+        var num1 = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
+        var num2 = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
         var question = num1 + " " + num2;
         gameInfo[1] = question;
         var answer = gcd(num1, num2);

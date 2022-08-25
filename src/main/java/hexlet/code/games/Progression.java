@@ -1,8 +1,9 @@
 package hexlet.code.games;
 
-import hexlet.code.Constants;
 import org.apache.commons.lang3.RandomUtils;
 
+import static hexlet.code.Constants.LOWER_RANDOM_BOUND;
+import static hexlet.code.Constants.UPPER_RANDOM_BOUND;
 import static hexlet.code.Constants.GAME_INFO_RULES_ID;
 
 public class Progression {
@@ -33,7 +34,7 @@ public class Progression {
     static int[] generateProgression() {
         var progression = new int[PROGRESSION_LENGTH];
         var step = RandomUtils.nextInt(LOWER_STEP_BOUND, UPPER_STEP_BOUND);
-        var startNumber = RandomUtils.nextInt(Constants.LOWER_RANDOM_BOUND, Constants.UPPER_RANDOM_BOUND);
+        var startNumber = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
 
         for (int i = 0; i < progression.length; i++) {
             progression[i] = startNumber + step * i;

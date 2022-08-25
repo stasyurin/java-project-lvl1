@@ -1,8 +1,9 @@
 package hexlet.code.games;
 
-import hexlet.code.Constants;
 import org.apache.commons.lang3.RandomUtils;
 
+import static hexlet.code.Constants.LOWER_RANDOM_BOUND;
+import static hexlet.code.Constants.UPPER_RANDOM_BOUND;
 import static hexlet.code.Constants.GAME_INFO_RULES_ID;
 
 public class Calc {
@@ -10,8 +11,8 @@ public class Calc {
 
     public static void gameInfo(String[] gameInfo) {
         gameInfo[GAME_INFO_RULES_ID] = rules();
-        var operand1 = RandomUtils.nextInt(Constants.LOWER_RANDOM_BOUND, Constants.UPPER_RANDOM_BOUND);
-        var operand2 = RandomUtils.nextInt(Constants.LOWER_RANDOM_BOUND, Constants.UPPER_RANDOM_BOUND);
+        var operand1 = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
+        var operand2 = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
         var operation = RandomUtils.nextInt(0, NO_OF_OPERATIONS);
         int answer;
         String question;
