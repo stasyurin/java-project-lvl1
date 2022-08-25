@@ -9,8 +9,7 @@ public class Progression {
     static final int UPPER_STEP_BOUND = 6;
 
     public static void gameInfo(String[] gameInfo) {
-        var rules = "What number is missing in the progression?";
-        gameInfo[0] = rules;
+        gameInfo[0] = rules();
         var progression = generateProgression();
         var missNumberIndex = RandomUtils.nextInt(1, progression.length - 1);
         var question = new StringBuilder();
@@ -25,6 +24,9 @@ public class Progression {
         gameInfo[1] = question.toString();
         var answer = Integer.toString(progression[missNumberIndex]);
         gameInfo[2] = answer;
+    }
+    static String rules() {
+        return "What number is missing in the progression?";
     }
     static int[] generateProgression() {
         var progression = new int[PROGRESSION_LENGTH];

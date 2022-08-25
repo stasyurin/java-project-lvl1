@@ -7,8 +7,7 @@ public class Calc {
     static final int NO_OF_OPERATIONS = 3;
 
     public static void gameInfo(String[] gameInfo) {
-        var rules = "What is the result of the expression?";
-        gameInfo[0] = rules;
+        gameInfo[0] = rules();
         var operand1 = RandomUtils.nextInt(Constants.LOWER_RANDOM_BOUND, Constants.UPPER_RANDOM_BOUND);
         var operand2 = RandomUtils.nextInt(Constants.LOWER_RANDOM_BOUND, Constants.UPPER_RANDOM_BOUND);
         var operation = RandomUtils.nextInt(0, NO_OF_OPERATIONS);
@@ -30,5 +29,8 @@ public class Calc {
         }
         gameInfo[1] = question;
         gameInfo[2] = Integer.toString(answer);
+    }
+    static String rules() {
+        return "What is the result of the expression?";
     }
 }
