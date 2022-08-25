@@ -46,8 +46,7 @@ public class App {
                 return;
             }
         }
-        Engine engine = new Engine(clientName);
-        engine.startGame(gameInfo);
+        Engine.startGame(gameInfo, clientName);
     }
 
 }

@@ -7,13 +7,7 @@ public final class Engine {
     public static final int LOWER_RANDOM_BOUND = 1;
     public static final int UPPER_RANDOM_BOUND = 101;
 
-    private final String clientName;
-
-    Engine(String pClientName) {
-        this.clientName = pClientName;
-    }
-
-    public void startGame(String[] gameInfo) {
+    public static void startGame(String[] gameInfo, String clientName) {
         String rules = gameInfo[0];
         String question = gameInfo[1];
         String rightAnswer = gameInfo[2];
