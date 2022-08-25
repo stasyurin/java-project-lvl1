@@ -4,12 +4,15 @@ import hexlet.code.Engine;
 import org.apache.commons.lang3.RandomUtils;
 
 public class GCD {
-    public static void fillIteration(Engine engine) {
+    public static void gameInfo(String[] gameInfo) {
+        String rules = "Find the greatest common divisor of given numbers.";
+        gameInfo[0] = rules;
         var num1 = RandomUtils.nextInt(Engine.LOWER_RANDOM_BOUND, Engine.UPPER_RANDOM_BOUND);
         var num2 = RandomUtils.nextInt(Engine.LOWER_RANDOM_BOUND, Engine.UPPER_RANDOM_BOUND);
-        engine.setQuestion(num1 + " " + num2);
-        var rightAnswer = gcd(num1, num2);
-        engine.setRightAnswer(Integer.toString(rightAnswer));
+        var question = num1 + " " + num2;
+        gameInfo[1] = question;
+        var answer = gcd(num1, num2);
+        gameInfo[2] = Integer.toString(answer);
     }
 
     static int gcd(int num1, int num2) {

@@ -1,8 +1,16 @@
 package hexlet.code;
 
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
+
 import java.util.Scanner;
 
 public class App {
+    public static final int GAME_INFO_LENGTH = 3;
+
     public static void main(String[] args) {
         var cli = new Cli();
         System.out.println("Please enter the game number and press Enter.");
@@ -27,17 +35,19 @@ public class App {
         if (noOfGame.equals("1")) {
             return;
         }
-        GameName gameName = switch (noOfGame) {
-            case "2" -> GameName.Even;
-            case "3" -> GameName.Calc;
-            case "4" -> GameName.GCD;
-            case "5" -> GameName.Progression;
-            case "6" -> GameName.Prime;
-            default -> null;
-        };
-        if (gameName != null) {
-            Engine engine = new Engine(clientName);
-            engine.startGame(gameName);
+        String[] gameInfo = new String[GAME_INFO_LENGTH];
+        switch (noOfGame) {
+            case "2" -> Even.gameInfo(gameInfo);
+            case "3" -> Calc.gameInfo(gameInfo);
+            case "4" -> GCD.gameInfo(gameInfo);
+            case "5" -> Progression.gameInfo(gameInfo);
+            case "6" -> Prime.gameInfo(gameInfo);
+            default -> {
+                return;
+            }
         }
+        Engine engine = new Engine(clientName);
+        engine.startGame(gameInfo);
     }
+
 }

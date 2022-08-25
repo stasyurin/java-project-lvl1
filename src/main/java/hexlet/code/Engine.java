@@ -1,11 +1,5 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Progression;
-import hexlet.code.games.Prime;
-
 import java.util.Scanner;
 
 public final class Engine {
@@ -13,68 +7,31 @@ public final class Engine {
     public static final int LOWER_RANDOM_BOUND = 1;
     public static final int UPPER_RANDOM_BOUND = 101;
 
-    private String rules;
-    private String question;
-    private String rightAnswer;
     private final String clientName;
 
     Engine(String pClientName) {
         this.clientName = pClientName;
     }
 
-    public void startGame(GameName gameName) {
-        initGame(gameName);
+    public void startGame(String[] gameInfo) {
+        String rules = gameInfo[0];
+        String question = gameInfo[1];
+        String rightAnswer = gameInfo[2];
         System.out.println(rules);
         for (int i = 0; i < POINTS_TO_WIN; i++) {
-            createIteration(gameName);
             System.out.println("Question: " + question);
             System.out.print("Your answer: ");
             Scanner in = new Scanner(System.in);
-            var answer = in.nextLine();
-            if (answer.equals(rightAnswer)) {
+            var clientAnswer = in.nextLine();
+            if (clientAnswer.equals(rightAnswer)) {
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + rightAnswer + "'");
+                System.out.println("'" + clientAnswer + "' is wrong answer ;(."
+                        + " Correct answer was '" + rightAnswer + "'");
                 System.out.println("Let's try again, " + clientName + "!");
                 return;
             }
         }
         System.out.println("Congratulations, " + clientName + "!");
-    }
-
-    void initGame(GameName gameName) {
-        if (gameName == GameName.Even) {
-            this.rules = "Answer 'yes' if number even otherwise answer 'no'.";
-        } else if (gameName == GameName.Calc) {
-            this.rules = "What is the result of the expression?";
-        } else if (gameName == GameName.GCD) {
-            this.rules = "Find the greatest common divisor of given numbers.";
-        } else if (gameName == GameName.Progression) {
-            this.rules = "What number is missing in the progression?";
-        } else if (gameName == GameName.Prime) {
-            this.rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        }
-    }
-
-    void createIteration(GameName gameName) {
-        if (gameName == GameName.Even) {
-            Even.fillIteration(this);
-        } else if (gameName == GameName.Calc) {
-            Calc.fillIteration(this);
-        } else if (gameName == GameName.GCD) {
-            GCD.fillIteration(this);
-        } else if (gameName == GameName.Progression) {
-            Progression.fillIteration(this);
-        } else if (gameName == GameName.Prime) {
-            Prime.fillIteration(this);
-        }
-    }
-
-    public void setQuestion(String pQuestion) {
-        this.question = pQuestion;
-    }
-
-    public void setRightAnswer(String pRightAnswer) {
-        this.rightAnswer = pRightAnswer;
     }
 }
