@@ -7,7 +7,7 @@ public class Calc {
     static final int NO_OF_OPERATIONS = 3;
 
     public static void gameInfo(String[] gameInfo) {
-        String rules = "What is the result of the expression?";
+        var rules = "What is the result of the expression?";
         gameInfo[0] = rules;
         var operand1 = RandomUtils.nextInt(Engine.LOWER_RANDOM_BOUND, Engine.UPPER_RANDOM_BOUND);
         var operand2 = RandomUtils.nextInt(Engine.LOWER_RANDOM_BOUND, Engine.UPPER_RANDOM_BOUND);

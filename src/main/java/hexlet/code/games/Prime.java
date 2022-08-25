@@ -5,7 +5,7 @@ import org.apache.commons.lang3.RandomUtils;
 
 public class Prime {
     public static void gameInfo(String[] gameInfo) {
-        String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        var rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         gameInfo[0] = rules;
         var question = RandomUtils.nextInt(Engine.LOWER_RANDOM_BOUND, Engine.UPPER_RANDOM_BOUND);
         gameInfo[1] = Integer.toString(question);

@@ -5,7 +5,7 @@ import org.apache.commons.lang3.RandomUtils;
 
 public class GCD {
     public static void gameInfo(String[] gameInfo) {
-        String rules = "Find the greatest common divisor of given numbers.";
+        var rules = "Find the greatest common divisor of given numbers.";
         gameInfo[0] = rules;
         var num1 = RandomUtils.nextInt(Engine.LOWER_RANDOM_BOUND, Engine.UPPER_RANDOM_BOUND);
         var num2 = RandomUtils.nextInt(Engine.LOWER_RANDOM_BOUND, Engine.UPPER_RANDOM_BOUND);

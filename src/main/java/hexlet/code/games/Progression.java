@@ -9,7 +9,7 @@ public class Progression {
     static final int UPPER_STEP_BOUND = 6;
 
     public static void gameInfo(String[] gameInfo) {
-        String rules = "What number is missing in the progression?";
+        var rules = "What number is missing in the progression?";
         gameInfo[0] = rules;
         var progression = generateProgression();
         var missNumberIndex = RandomUtils.nextInt(1, progression.length - 1);

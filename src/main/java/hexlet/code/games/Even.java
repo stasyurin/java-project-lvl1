@@ -5,7 +5,7 @@ import org.apache.commons.lang3.RandomUtils;
 
 public class Even {
     public static void gameInfo(String[] gameInfo) {
-        String rules = "Answer 'yes' if number even otherwise answer 'no'.";
+        var rules = "Answer 'yes' if number even otherwise answer 'no'.";
         gameInfo[0] = rules;
         var question = RandomUtils.nextInt(Engine.LOWER_RANDOM_BOUND, Engine.UPPER_RANDOM_BOUND);
         gameInfo[1] = Integer.toString(question);
