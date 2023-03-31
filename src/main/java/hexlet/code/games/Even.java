@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
 public class Even {
-    static String rules() {
+    public static String rules() {
         return "Answer 'yes' if number even otherwise answer 'no'.";
     }
     static boolean isEven(int n) {

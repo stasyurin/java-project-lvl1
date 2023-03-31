@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
 public class Prime {
-    static String rules() {
+    public static String rules() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
     static boolean isPrime(int num) {

@@ -1,14 +1,12 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.YesNoGames;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Progression;
+import hexlet.code.games.*;
 
 import java.util.Scanner;
 
+import static hexlet.code.Constants.*;
+
 public class App {
-    public static final int GAME_INFO_LENGTH = 3;
 
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
@@ -33,18 +31,31 @@ public class App {
         if (noOfGame.equals("1")) {
             return;
         }
-        String[] gameInfo = new String[GAME_INFO_LENGTH];
+        String rules;
+        String[][] questionsRightAnswers;
         switch (noOfGame) {
-            case "2" -> YesNoGames.gameInfo(gameInfo, "Even");
-            case "3" -> Calc.gameInfo(gameInfo);
-            case "4" -> GCD.gameInfo(gameInfo);
-            case "5" -> Progression.gameInfo(gameInfo);
-            case "6" -> YesNoGames.gameInfo(gameInfo, "Prime");
+            case "2" -> {
+                rules = Even.rules();
+                questionsRightAnswers = YesNoGames.questionsRightAnswers("Even");
+            }
+            case "3" -> {
+                rules = Calc.rules();
+                questionsRightAnswers = Calc.questionsRightAnswers();
+            }
+            case "4" -> {
+                rules = GCD.rules();
+                questionsRightAnswers = GCD.questionsRightAnswers();
+            }
+            case "5" -> {
+                rules = Progression.rules();
+                questionsRightAnswers = Progression.questionsRightAnswers();
+            }
             default -> {
-                return;
+                rules = Prime.rules();
+                questionsRightAnswers = YesNoGames.questionsRightAnswers("Prime");
             }
         }
-        Engine.startGame(gameInfo, clientName);
+        Engine.startGame(rules, questionsRightAnswers, clientName);
     }
 
 }

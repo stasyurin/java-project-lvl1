@@ -2,29 +2,30 @@ package hexlet.code.games;
 
 import org.apache.commons.lang3.RandomUtils;
 
-import static hexlet.code.Constants.LOWER_RANDOM_BOUND;
-import static hexlet.code.Constants.UPPER_RANDOM_BOUND;
-import static hexlet.code.Constants.RULES_ID;
-import static hexlet.code.Constants.QUESTION_ID;
-import static hexlet.code.Constants.ANSWER_ID;
+import java.util.Scanner;
+
+import static hexlet.code.Constants.*;
 import static hexlet.code.games.Even.isEven;
 import static hexlet.code.games.Prime.isPrime;
 
 public class YesNoGames {
-    public static void gameInfo(String[] gameInfo, String gameName) {
-        if (gameName.equals("Even")) {
-            gameInfo[RULES_ID] = Even.rules();
-        } else {
-            gameInfo[RULES_ID] = Prime.rules();
+    public static String[][] questionsRightAnswers(String gameName) {
+        String[] questions = new String[POINTS_TO_WIN];
+        String[] rightAnswers = new String[POINTS_TO_WIN];
+        for (int i = 0; i < POINTS_TO_WIN; i++) {
+            var question = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
+            questions[i] = Integer.toString(question);
+            String answer;
+            if (gameName.equals("Even")) {
+                answer = isEven(question) ? "yes" : "no";
+            } else {
+                answer = isPrime(question) ? "yes" : "no";
+            }
+            rightAnswers[i] = answer;
         }
-        var question = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
-        gameInfo[QUESTION_ID] = Integer.toString(question);
-        String answer;
-        if (gameName.equals("Even")) {
-            answer = isEven(question) ? "yes" : "no";
-        } else {
-            answer = isPrime(question) ? "yes" : "no";
-        }
-        gameInfo[ANSWER_ID] = answer;
+        String[][] questionsRightAnswers = new String[2][POINTS_TO_WIN];
+        questionsRightAnswers[QUESTIONS_ID] = questions;
+        questionsRightAnswers[RIGHT_ANSWERS_ID] = rightAnswers;
+        return questionsRightAnswers;
     }
 }
