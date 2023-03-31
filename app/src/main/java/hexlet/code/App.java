@@ -4,6 +4,8 @@ import hexlet.code.games.*;
 
 import java.util.Scanner;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 public class App {
 
     public static void main(String[] args) {
@@ -17,7 +19,7 @@ public class App {
         System.out.println("0 - Exit");
 
         System.out.print("Your choice: ");
-        Scanner in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in, UTF_8);
         var noOfGame = in.nextLine();
         if (noOfGame.equals("0")) {
             return;
