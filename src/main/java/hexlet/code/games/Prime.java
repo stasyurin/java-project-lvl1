@@ -4,7 +4,6 @@ import org.apache.commons.lang3.RandomUtils;
 
 import static hexlet.code.Constants.*;
 import static hexlet.code.Constants.RIGHT_ANSWERS_ID;
-import static hexlet.code.games.Even.isEven;
 
 public class Prime {
     public static String rules() {
