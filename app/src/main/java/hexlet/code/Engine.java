@@ -3,6 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 import static hexlet.code.Constants.*;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 public final class Engine {
 
@@ -13,7 +14,7 @@ public final class Engine {
         for (int i = 0; i < POINTS_TO_WIN; i++) {
             System.out.println("Question: " + questions[i]);
             System.out.print("Your answer: ");
-            Scanner in = new Scanner(System.in);
+            Scanner in = new Scanner(System.in, UTF_8);
             var clientAnswer = in.nextLine();
             if (clientAnswer.equals(rightAnswers[i])) {
                 System.out.println("Correct!");
