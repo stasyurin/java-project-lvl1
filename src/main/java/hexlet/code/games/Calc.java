@@ -3,8 +3,6 @@ package hexlet.code.games;
 import org.apache.commons.lang3.RandomUtils;
 
 import static hexlet.code.Constants.*;
-import static hexlet.code.games.Even.isEven;
-import static hexlet.code.games.Prime.isPrime;
 
 public class Calc {
     static final int NO_OF_OPERATIONS = 3;

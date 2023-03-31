@@ -2,8 +2,6 @@ package hexlet.code.games;
 
 import org.apache.commons.lang3.RandomUtils;
 
-import java.util.Scanner;
-
 import static hexlet.code.Constants.*;
 import static hexlet.code.games.Even.isEven;
 import static hexlet.code.games.Prime.isPrime;
