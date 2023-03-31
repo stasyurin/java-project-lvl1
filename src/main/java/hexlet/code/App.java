@@ -34,7 +34,7 @@ public class App {
         switch (noOfGame) {
             case "2" -> {
                 rules = Even.rules();
-                questionsRightAnswers = YesNoGames.questionsRightAnswers("Even");
+                questionsRightAnswers = Even.questionsRightAnswers();
             }
             case "3" -> {
                 rules = Calc.rules();
@@ -50,7 +50,7 @@ public class App {
             }
             default -> {
                 rules = Prime.rules();
-                questionsRightAnswers = YesNoGames.questionsRightAnswers("Prime");
+                questionsRightAnswers = Prime.questionsRightAnswers();
             }
         }
         Engine.startGame(rules, questionsRightAnswers, clientName);
