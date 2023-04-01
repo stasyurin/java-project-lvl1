@@ -2,8 +2,6 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
-
 public final class Cli {
 
     public static void printWelcomeMsg() {
@@ -12,7 +10,7 @@ public final class Cli {
 
     public static String askName() {
         System.out.print("May I have your name? ");
-        Scanner in = new Scanner(System.in, UTF_8);
+        Scanner in = new Scanner(System.in);
         return in.nextLine();
     }
 
