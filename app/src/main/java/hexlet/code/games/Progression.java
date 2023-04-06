@@ -21,16 +21,7 @@ public class Progression {
         for (int i = 0; i < POINTS_TO_WIN; i++) {
             var progression = generateProgression();
             var missNumberIndex = RandomUtils.nextInt(1, progression.length - 1);
-            var question = new StringBuilder();
-            for (int j = 0; j < progression.length; j++) {
-                if (j == missNumberIndex) {
-                    question.append(".. ");
-                } else {
-                    question.append(progression[j]);
-                    question.append(" ");
-                }
-            }
-            questions[i] = question.toString();
+            questions[i] = generateQuestion(progression, missNumberIndex);
             var answer = Integer.toString(progression[missNumberIndex]);
             rightAnswers[i] = answer;
         }
@@ -49,5 +40,17 @@ public class Progression {
         }
 
         return progression;
+    }
+    static String generateQuestion(int[] progression, int missNumberIndex) {
+        var question = new StringBuilder();
+        for (int j = 0; j < progression.length; j++) {
+            if (j == missNumberIndex) {
+                question.append(".. ");
+            } else {
+                question.append(progression[j]);
+                question.append(" ");
+            }
+        }
+        return question.toString();
     }
 }
