@@ -41,21 +41,41 @@ public class App {
         }
         String rules;
         switch (noOfGame) {
-            case "2" -> rules = Even.rules();
-            case "3" -> rules = Calc.rules();
-            case "4" -> rules = GCD.rules();
-            case "5" -> rules = Progression.rules();
-            default -> rules = Prime.rules();
+            case "2" -> {
+                rules = Even.rules();
+            }
+            case "3" -> {
+                rules = Calc.rules();
+            }
+            case "4" -> {
+                rules = GCD.rules();
+            }
+            case "5" -> {
+                rules = Progression.rules();
+            }
+            default -> {
+                rules = Prime.rules();
+            }
         }
         String[][] questionsRightAnswers = new String[2][POINTS_TO_WIN];
         for (int i = 0; i < POINTS_TO_WIN; i++) {
             String[] questionAnswer;
             switch (noOfGame) {
-                case "2" -> questionAnswer = Even.questionAnswer();
-                case "3" -> questionAnswer = Calc.questionAnswer();
-                case "4" -> questionAnswer = GCD.questionAnswer();
-                case "5" -> questionAnswer = Progression.questionAnswer();
-                default -> questionAnswer = Prime.questionAnswer();
+                case "2" -> {
+                    questionAnswer = Even.questionAnswer();
+                }
+                case "3" -> {
+                    questionAnswer = Calc.questionAnswer();
+                }
+                case "4" -> {
+                    questionAnswer = GCD.questionAnswer();
+                }
+                case "5" -> {
+                    questionAnswer = Progression.questionAnswer();
+                }
+                default -> {
+                    questionAnswer = Prime.questionAnswer();
+                }
             }
             questionsRightAnswers[QUESTIONS_ID][i] = questionAnswer[QUESTION_ID];
             questionsRightAnswers[RIGHT_ANSWERS_ID][i] = questionAnswer[ANSWER_ID];
