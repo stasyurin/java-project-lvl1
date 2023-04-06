@@ -7,7 +7,7 @@ import static hexlet.code.Constants.RIGHT_ANSWERS_ID;
 
 public class Even {
     public static String rules() {
-        return "Answer 'yes' if number even otherwise answer 'no'.";
+        return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
     public static String[][] questionsRightAnswers() {
         String[] questions = new String[POINTS_TO_WIN];
