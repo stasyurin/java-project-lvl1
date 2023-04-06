@@ -2,7 +2,10 @@ package hexlet.code.games;
 
 import org.apache.commons.lang3.RandomUtils;
 
-import static hexlet.code.Constants.*;
+import static hexlet.code.Constants.POINTS_TO_WIN;
+import static hexlet.code.Constants.LOWER_RANDOM_BOUND;
+import static hexlet.code.Constants.UPPER_RANDOM_BOUND;
+import static hexlet.code.Constants.QUESTIONS_ID;
 import static hexlet.code.Constants.RIGHT_ANSWERS_ID;
 
 public class Prime {

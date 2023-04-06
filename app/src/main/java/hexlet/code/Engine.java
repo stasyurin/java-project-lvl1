@@ -2,7 +2,9 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-import static hexlet.code.Constants.*;
+import static hexlet.code.Constants.POINTS_TO_WIN;
+import static hexlet.code.Constants.QUESTIONS_ID;
+import static hexlet.code.Constants.RIGHT_ANSWERS_ID;
 
 public final class Engine {
 
