@@ -10,9 +10,7 @@ import java.util.Scanner;
 
 import static hexlet.code.Constants.ANSWER_ID;
 import static hexlet.code.Constants.POINTS_TO_WIN;
-import static hexlet.code.Constants.QUESTIONS_ID;
 import static hexlet.code.Constants.QUESTION_ID;
-import static hexlet.code.Constants.RIGHT_ANSWERS_ID;
 
 public class App {
 
@@ -57,7 +55,7 @@ public class App {
                 rules = Prime.rules();
             }
         }
-        String[][] questionsRightAnswers = new String[2][POINTS_TO_WIN];
+        String[][] questionsAnswers = new String[2][POINTS_TO_WIN];
         for (int i = 0; i < POINTS_TO_WIN; i++) {
             String[] questionAnswer;
             switch (noOfGame) {
@@ -77,10 +75,10 @@ public class App {
                     questionAnswer = Prime.questionAnswer();
                 }
             }
-            questionsRightAnswers[QUESTIONS_ID][i] = questionAnswer[QUESTION_ID];
-            questionsRightAnswers[RIGHT_ANSWERS_ID][i] = questionAnswer[ANSWER_ID];
+            questionsAnswers[QUESTION_ID][i] = questionAnswer[QUESTION_ID];
+            questionsAnswers[ANSWER_ID][i] = questionAnswer[ANSWER_ID];
         }
-        Engine.startGame(rules, questionsRightAnswers, clientName);
+        Engine.startGame(rules, questionsAnswers, clientName);
     }
 
 }
