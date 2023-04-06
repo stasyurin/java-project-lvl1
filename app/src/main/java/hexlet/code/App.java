@@ -8,6 +8,9 @@ import hexlet.code.games.Prime;
 
 import java.util.Scanner;
 
+import static hexlet.code.Constants.*;
+import static hexlet.code.Constants.RIGHT_ANSWERS_ID;
+
 public class App {
 
     public static void main(String[] args) {
@@ -34,28 +37,25 @@ public class App {
             return;
         }
         String rules;
-        String[][] questionsRightAnswers;
         switch (noOfGame) {
-            case "2" -> {
-                rules = Even.rules();
-                questionsRightAnswers = Even.questionsRightAnswers();
+            case "2" -> rules = Even.rules();
+            case "3" -> rules = Calc.rules();
+            case "4" -> rules = GCD.rules();
+            case "5" -> rules = Progression.rules();
+            default -> rules = Prime.rules();
+        }
+        String[][] questionsRightAnswers = new String[2][POINTS_TO_WIN];
+        for (int i = 0; i < POINTS_TO_WIN; i++) {
+            String[] questionAnswer;
+            switch (noOfGame) {
+                case "2" -> questionAnswer = Even.questionAnswer();
+                case "3" -> questionAnswer = Calc.questionAnswer();
+                case "4" -> questionAnswer = GCD.questionAnswer();
+                case "5" -> questionAnswer = Progression.questionAnswer();
+                default -> questionAnswer = Prime.questionAnswer();
             }
-            case "3" -> {
-                rules = Calc.rules();
-                questionsRightAnswers = Calc.questionsRightAnswers();
-            }
-            case "4" -> {
-                rules = GCD.rules();
-                questionsRightAnswers = GCD.questionsRightAnswers();
-            }
-            case "5" -> {
-                rules = Progression.rules();
-                questionsRightAnswers = Progression.questionsRightAnswers();
-            }
-            default -> {
-                rules = Prime.rules();
-                questionsRightAnswers = Prime.questionsRightAnswers();
-            }
+            questionsRightAnswers[QUESTIONS_ID][i] = questionAnswer[QUESTION_ID];
+            questionsRightAnswers[RIGHT_ANSWERS_ID][i] = questionAnswer[ANSWER_ID];
         }
         Engine.startGame(rules, questionsRightAnswers, clientName);
     }
