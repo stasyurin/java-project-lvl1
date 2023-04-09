@@ -1,18 +1,26 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
 import org.apache.commons.lang3.RandomUtils;
 
-import static hexlet.code.Constants.LOWER_RANDOM_BOUND;
-import static hexlet.code.Constants.UPPER_RANDOM_BOUND;
-import static hexlet.code.Constants.QUESTION_ID;
-import static hexlet.code.Constants.ANSWER_ID;
+import static hexlet.code.Constants.*;
 
 public class Calc {
     static final int NO_OF_OPERATIONS = 3;
-    public static String rules() {
+    public static void startGame(String clientName) {
+        var rules = rules();
+        String[][] questionsAnswers = new String[2][POINTS_TO_WIN];
+        for (int i = 0; i < POINTS_TO_WIN; i++) {
+            String[] questionAnswer = questionAnswer();
+            questionsAnswers[QUESTION_ID][i] = questionAnswer[QUESTION_ID];
+            questionsAnswers[ANSWER_ID][i] = questionAnswer[ANSWER_ID];
+        }
+        Engine.startGame(rules, questionsAnswers, clientName);
+    }
+    static String rules() {
         return "What is the result of the expression?";
     }
-    public static String[] questionAnswer() {
+    static String[] questionAnswer() {
         var operation = RandomUtils.nextInt(0, NO_OF_OPERATIONS);
         var operand1 = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
         var operand2 = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);

@@ -8,10 +8,6 @@ import hexlet.code.games.Prime;
 
 import java.util.Scanner;
 
-import static hexlet.code.Constants.ANSWER_ID;
-import static hexlet.code.Constants.POINTS_TO_WIN;
-import static hexlet.code.Constants.QUESTION_ID;
-
 public class App {
 
     public static void main(String[] args) {
@@ -34,57 +30,26 @@ public class App {
         Cli.printWelcomeMsg();
         var clientName = Cli.askName();
         Cli.printGreeting(clientName);
-        String rules;
         switch (noOfGame) {
-            case "1" -> {
-                return;
-            }
             case "2" -> {
-                rules = Even.rules();
+                Even.startGame(clientName);
             }
             case "3" -> {
-                rules = Calc.rules();
+                Calc.startGame(clientName);
             }
             case "4" -> {
-                rules = GCD.rules();
+                GCD.startGame(clientName);
             }
             case "5" -> {
-                rules = Progression.rules();
+                Progression.startGame(clientName);
             }
             case "6" -> {
-                rules = Prime.rules();
+                Prime.startGame(clientName);
             }
             default -> {
                 throw new RuntimeException("Unknown game number input: " + noOfGame);
             }
         }
-        String[][] questionsAnswers = new String[2][POINTS_TO_WIN];
-        for (int i = 0; i < POINTS_TO_WIN; i++) {
-            String[] questionAnswer;
-            switch (noOfGame) {
-                case "2" -> {
-                    questionAnswer = Even.questionAnswer();
-                }
-                case "3" -> {
-                    questionAnswer = Calc.questionAnswer();
-                }
-                case "4" -> {
-                    questionAnswer = GCD.questionAnswer();
-                }
-                case "5" -> {
-                    questionAnswer = Progression.questionAnswer();
-                }
-                case "6" -> {
-                    questionAnswer = Prime.questionAnswer();
-                }
-                default -> {
-                    throw new RuntimeException("Unknown game number input: " + noOfGame);
-                }
-            }
-            questionsAnswers[QUESTION_ID][i] = questionAnswer[QUESTION_ID];
-            questionsAnswers[ANSWER_ID][i] = questionAnswer[ANSWER_ID];
-        }
-        Engine.startGame(rules, questionsAnswers, clientName);
     }
 
 }

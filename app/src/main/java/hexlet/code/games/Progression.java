@@ -1,20 +1,29 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
 import org.apache.commons.lang3.RandomUtils;
 
-import static hexlet.code.Constants.ANSWER_ID;
-import static hexlet.code.Constants.LOWER_RANDOM_BOUND;
-import static hexlet.code.Constants.QUESTION_ID;
-import static hexlet.code.Constants.UPPER_RANDOM_BOUND;
+import static hexlet.code.Constants.*;
+import static hexlet.code.Constants.POINTS_TO_WIN;
 
 public class Progression {
     static final int PROGRESSION_LENGTH = 10;
     static final int LOWER_STEP_BOUND = 1;
     static final int UPPER_STEP_BOUND = 6;
-    public static String rules() {
+    public static void startGame(String clientName) {
+        var rules = rules();
+        String[][] questionsAnswers = new String[2][POINTS_TO_WIN];
+        for (int i = 0; i < POINTS_TO_WIN; i++) {
+            String[] questionAnswer = questionAnswer();
+            questionsAnswers[QUESTION_ID][i] = questionAnswer[QUESTION_ID];
+            questionsAnswers[ANSWER_ID][i] = questionAnswer[ANSWER_ID];
+        }
+        Engine.startGame(rules, questionsAnswers, clientName);
+    }
+    static String rules() {
         return "What number is missing in the progression?";
     }
-    public static String[] questionAnswer() {
+    static String[] questionAnswer() {
         var progression = generateProgression();
         var missNumberIndex = RandomUtils.nextInt(1, progression.length - 1);
 
