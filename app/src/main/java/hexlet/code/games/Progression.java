@@ -3,11 +3,11 @@ package hexlet.code.games;
 import org.apache.commons.lang3.RandomUtils;
 
 import static hexlet.code.Constants.ANSWER_ID;
-import static hexlet.code.Constants.LOWER_RANDOM_BOUND;
 import static hexlet.code.Constants.QUESTION_ID;
-import static hexlet.code.Constants.UPPER_RANDOM_BOUND;
 
 public class Progression {
+    static final int LOWER_RANDOM_BOUND = 1;
+    static final int UPPER_RANDOM_BOUND = 101;
     static final int PROGRESSION_LENGTH = 10;
     static final int LOWER_STEP_BOUND = 1;
     static final int UPPER_STEP_BOUND = 6;

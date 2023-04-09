@@ -2,12 +2,12 @@ package hexlet.code.games;
 
 import org.apache.commons.lang3.RandomUtils;
 
-import static hexlet.code.Constants.LOWER_RANDOM_BOUND;
-import static hexlet.code.Constants.UPPER_RANDOM_BOUND;
 import static hexlet.code.Constants.QUESTION_ID;
 import static hexlet.code.Constants.ANSWER_ID;
 
 public class Calc {
+    static final int LOWER_RANDOM_BOUND = 1;
+    static final int UPPER_RANDOM_BOUND = 101;
     static final int NO_OF_OPERATIONS = 3;
     public static String rules() {
         return "What is the result of the expression?";
