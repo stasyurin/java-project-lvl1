@@ -17,37 +17,33 @@ public class Progression {
     }
     public static String[] questionAnswer() {
         var progression = generateProgression();
-        var missNumberIndex = RandomUtils.nextInt(1, progression.length - 1);
+        var hiddenMemberIndex = RandomUtils.nextInt(1, progression.length - 1);
 
-        var question = generateQuestion(progression, missNumberIndex);
-        var answer = Integer.toString(progression[missNumberIndex]);
+        var answer = progression[hiddenMemberIndex];
+        var question = generateQuestion(progression, hiddenMemberIndex);
 
         var questionAnswer = new String[2];
         questionAnswer[QUESTION_ID] = question;
         questionAnswer[ANSWER_ID] = answer;
         return questionAnswer;
     }
-    static int[] generateProgression() {
-        var progression = new int[PROGRESSION_LENGTH];
+    static String[] generateProgression() {
         var step = RandomUtils.nextInt(LOWER_STEP_BOUND, UPPER_STEP_BOUND);
-        var startNumber = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
+        var first = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
 
-        for (int i = 0; i < progression.length; i++) {
-            progression[i] = startNumber + step * i;
+        return makeProgression(first, step, PROGRESSION_LENGTH);
+    }
+    private static String[] makeProgression(int first, int step, int length) {
+        String[] progression = new String[length];
+
+        for (int i = 0; i < length; i += 1) {
+            progression[i] = Integer.toString(first + i * step);
         }
 
         return progression;
     }
-    static String generateQuestion(int[] progression, int missNumberIndex) {
-        var question = new StringBuilder();
-        for (int j = 0; j < progression.length; j++) {
-            if (j == missNumberIndex) {
-                question.append(".. ");
-            } else {
-                question.append(progression[j]);
-                question.append(" ");
-            }
-        }
-        return question.toString();
+    static String generateQuestion(String[] progression, int hiddenMemberIndex) {
+        progression[hiddenMemberIndex] = "..";
+        return String.join(" ", progression);
     }
 }
