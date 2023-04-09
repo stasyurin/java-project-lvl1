@@ -9,8 +9,9 @@ public class Calc {
     static final int LOWER_RANDOM_BOUND = 1;
     static final int UPPER_RANDOM_BOUND = 101;
     static final int NO_OF_OPERATIONS = 3;
+    static final String RULES = "What is the result of the expression?";
     public static String rules() {
-        return "What is the result of the expression?";
+        return RULES;
     }
     public static String[] questionAnswer() {
         var operation = RandomUtils.nextInt(0, NO_OF_OPERATIONS);

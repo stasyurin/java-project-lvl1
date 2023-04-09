@@ -8,8 +8,9 @@ import static hexlet.code.Constants.QUESTION_ID;
 public class Prime {
     static final int LOWER_RANDOM_BOUND = 1;
     static final int UPPER_RANDOM_BOUND = 101;
+    static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     public static String rules() {
-        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        return RULES;
     }
     public static String[] questionAnswer() {
         var randomInt = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);

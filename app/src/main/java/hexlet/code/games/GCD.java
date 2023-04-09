@@ -8,8 +8,9 @@ import static hexlet.code.Constants.QUESTION_ID;
 public class GCD {
     static final int LOWER_RANDOM_BOUND = 1;
     static final int UPPER_RANDOM_BOUND = 101;
+    static final String RULES = "Find the greatest common divisor of given numbers.";
     public static String rules() {
-        return "Find the greatest common divisor of given numbers.";
+        return RULES;
     }
     public static String[] questionAnswer() {
         var num1 = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);

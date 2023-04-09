@@ -8,8 +8,9 @@ import static hexlet.code.Constants.QUESTION_ID;
 public class Even {
     static final int LOWER_RANDOM_BOUND = 1;
     static final int UPPER_RANDOM_BOUND = 101;
+    static final String RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     public static String rules() {
-        return "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        return RULES;
     }
     static boolean isEven(int n) {
         return n % 2 == 0;

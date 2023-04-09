@@ -11,8 +11,9 @@ public class Progression {
     static final int PROGRESSION_LENGTH = 10;
     static final int LOWER_STEP_BOUND = 1;
     static final int UPPER_STEP_BOUND = 6;
+    static final String RULES = "What number is missing in the progression?";
     public static String rules() {
-        return "What number is missing in the progression?";
+        return RULES;
     }
     public static String[] questionAnswer() {
         var progression = generateProgression();
