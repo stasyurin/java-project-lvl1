@@ -55,8 +55,7 @@ public class App {
                 rules = Prime.rules();
             }
             default -> {
-                System.out.println("Wrong game number");
-                return;
+                throw new RuntimeException("Unknown game number input: " + noOfGame);
             }
         }
         String[][] questionsAnswers = new String[2][POINTS_TO_WIN];
@@ -79,8 +78,7 @@ public class App {
                     questionAnswer = Prime.questionAnswer();
                 }
                 default -> {
-                    System.out.println("Wrong game number");
-                    return;
+                    throw new RuntimeException("Unknown game number input: " + noOfGame);
                 }
             }
             questionsAnswers[QUESTION_ID][i] = questionAnswer[QUESTION_ID];
