@@ -31,8 +31,6 @@ public class App {
         var clientName = Cli.askName();
         Cli.printGreeting(clientName);
         switch (noOfGame) {
-            case "1" -> {
-            }
             case "2" -> {
                 Even.startGame(clientName);
             }
