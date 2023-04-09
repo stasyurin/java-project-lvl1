@@ -1,8 +1,13 @@
-# java-project-lvl1
+# Brain Games
 [![Maintainability](https://api.codeclimate.com/v1/badges/f35ac4d613acdbcf622c/maintainability)](https://codeclimate.com/github/stasyurin/java-project-lvl1/maintainability)
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/stasyurin/java-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/stasyurin/java-project-lvl1/actions)
+
+## Description
+
+Brain Games is a console application where you can play simple arithmetic games.
+Choose one of the games and test your arithmetic skills.
 
 ## Demo
 
