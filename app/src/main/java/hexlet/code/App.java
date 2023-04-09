@@ -51,8 +51,12 @@ public class App {
             case "5" -> {
                 rules = Progression.rules();
             }
-            default -> {
+            case "6" -> {
                 rules = Prime.rules();
+            }
+            default -> {
+                System.out.println("Wrong game number");
+                return;
             }
         }
         String[][] questionsAnswers = new String[2][POINTS_TO_WIN];
@@ -71,8 +75,12 @@ public class App {
                 case "5" -> {
                     questionAnswer = Progression.questionAnswer();
                 }
-                default -> {
+                case "6" -> {
                     questionAnswer = Prime.questionAnswer();
+                }
+                default -> {
+                    System.out.println("Wrong game number");
+                    return;
                 }
             }
             questionsAnswers[QUESTION_ID][i] = questionAnswer[QUESTION_ID];
