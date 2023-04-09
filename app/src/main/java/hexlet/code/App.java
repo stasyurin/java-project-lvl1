@@ -34,11 +34,11 @@ public class App {
         Cli.printWelcomeMsg();
         var clientName = Cli.askName();
         Cli.printGreeting(clientName);
-        if (noOfGame.equals("1")) {
-            return;
-        }
         String rules;
         switch (noOfGame) {
+            case "1" -> {
+                return;
+            }
             case "2" -> {
                 rules = Even.rules();
             }
