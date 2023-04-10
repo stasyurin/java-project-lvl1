@@ -16,15 +16,15 @@ public class App {
 
         System.out.print("Your choice: ");
         Scanner in = new Scanner(System.in);
-        var noOfGame = in.nextLine();
-        if (noOfGame.equals("0")) {
+        var input = in.nextLine();
+        if (input.equals("0")) {
+            return;
+        } else if (input.equals("1")) {
+            Cli.greet();
             return;
         }
         System.out.println();
-        Cli.printWelcomeMsg();
-        var clientName = Cli.askName();
-        Cli.printGreeting(clientName);
-        Games.startGame(noOfGame, clientName);
+        Games.startGame(input);
     }
 
 }

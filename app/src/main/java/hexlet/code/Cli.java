@@ -2,19 +2,15 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-public final class Cli {
+public class Cli {
+    public static void greet() {
+        Scanner scanner = new Scanner(System.in);
 
-    public static void printWelcomeMsg() {
         System.out.println("Welcome to the Brain Games!");
-    }
-
-    public static String askName() {
         System.out.print("May I have your name? ");
-        Scanner in = new Scanner(System.in);
-        return in.nextLine();
-    }
+        String userName = scanner.next();
+        System.out.println("Hello, " + userName + "!");
 
-    public static void printGreeting(String name) {
-        System.out.println("Hello, " + name + "!");
+        scanner.close();
     }
 }

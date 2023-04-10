@@ -1,5 +1,7 @@
 package hexlet.code;
 
+import java.util.Scanner;
+
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
@@ -11,12 +13,15 @@ import static hexlet.code.Constants.POINTS_TO_WIN;
 import static hexlet.code.Constants.QUESTION_ID;
 
 public class Games {
-    public static void startGame(String noOfGame, String clientName) {
+    public static void startGame(String noOfGame) {
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        Scanner in = new Scanner(System.in);
+        var clientName = in.nextLine();
+        System.out.println("Hello, " + clientName + "!");
+
         String rules;
         switch (noOfGame) {
-            case "1" -> {
-                return;
-            }
             case "2" -> {
                 rules = Even.rules();
             }
