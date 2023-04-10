@@ -8,7 +8,7 @@ import static hexlet.code.Constants.QUESTION_ID;
 
 public final class Engine {
 
-    public static void startGame(String rules, String[][] questionsAnswers, String clientName) {
+    public static void startGame(String rules, String[][] questionsAnswers, String userName) {
         System.out.println(rules);
         String[] questions = questionsAnswers[QUESTION_ID];
         String[] answers = questionsAnswers[ANSWER_ID];
@@ -22,10 +22,10 @@ public final class Engine {
             } else {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(."
                         + " Correct answer was '" + answers[i] + "'");
-                System.out.println("Let's try again, " + clientName + "!");
+                System.out.println("Let's try again, " + userName + "!");
                 return;
             }
         }
-        System.out.println("Congratulations, " + clientName + "!");
+        System.out.println("Congratulations, " + userName + "!");
     }
 }

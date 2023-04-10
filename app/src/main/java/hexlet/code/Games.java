@@ -17,8 +17,8 @@ public class Games {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         Scanner in = new Scanner(System.in);
-        var clientName = in.nextLine();
-        System.out.println("Hello, " + clientName + "!");
+        var userName = in.nextLine();
+        System.out.println("Hello, " + userName + "!");
 
         String rules;
         switch (noOfGame) {
@@ -67,6 +67,6 @@ public class Games {
             questionsAnswers[QUESTION_ID][i] = questionAnswer[QUESTION_ID];
             questionsAnswers[ANSWER_ID][i] = questionAnswer[ANSWER_ID];
         }
-        Engine.startGame(rules, questionsAnswers, clientName);
+        Engine.startGame(rules, questionsAnswers, userName);
     }
 }
