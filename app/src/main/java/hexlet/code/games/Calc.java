@@ -14,12 +14,12 @@ public class Calc {
         return RULES;
     }
     public static String[] questionAnswer() {
-        var operation = RandomUtils.nextInt(0, OPERATORS.length - 1);
+        var operatorIndex = RandomUtils.nextInt(0, OPERATORS.length - 1);
         var operand1 = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
         var operand2 = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
         int operationResult;
-        switch (operation) {
-            default -> {
+        switch (operatorIndex) {
+            case 0 -> {
                 operationResult = operand1 + operand2;
             }
             case 1 -> {
@@ -28,9 +28,12 @@ public class Calc {
             case 2 -> {
                 operationResult = operand1 * operand2;
             }
+            default -> {
+                throw new RuntimeException("Unknown operator index: " + operatorIndex);
+            }
         }
 
-        var question = operand1 + " " + OPERATORS[operation] + " " + operand2;
+        var question = operand1 + " " + OPERATORS[operatorIndex] + " " + operand2;
         var answer = Integer.toString(operationResult);
 
         var questionAnswer = new String[2];
