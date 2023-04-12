@@ -28,28 +28,23 @@ public class App {
             Cli.greet();
             return;
         }
-
         System.out.println();
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        var userName = in.nextLine();
-        System.out.println("Hello, " + userName + "!");
 
         switch (noOfGame) {
             case "2" -> {
-                Even.startGame(userName);
+                Even.startGame();
             }
             case "3" -> {
-                Calc.startGame(userName);
+                Calc.startGame();
             }
             case "4" -> {
-                GCD.startGame(userName);
+                GCD.startGame();
             }
             case "5" -> {
-                Progression.startGame(userName);
+                Progression.startGame();
             }
             case "6" -> {
-                Prime.startGame(userName);
+                Prime.startGame();
             }
             default -> {
                 throw new RuntimeException("Unknown game number input: " + noOfGame);

@@ -10,14 +10,14 @@ public class Even {
     static final int LOWER_RANDOM_BOUND = 1;
     static final int UPPER_RANDOM_BOUND = 101;
     static final String RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-    public static void startGame(String userName) {
+    public static void startGame() {
         String[][] questionsAnswers = new String[2][Engine.ROUNDS_COUNT];
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             String[] questionAnswer = questionAnswer();
             questionsAnswers[QUESTION_ID][i] = questionAnswer[QUESTION_ID];
             questionsAnswers[ANSWER_ID][i] = questionAnswer[ANSWER_ID];
         }
-        Engine.startGame(RULES, questionsAnswers, userName);
+        Engine.startGame(RULES, questionsAnswers);
     }
     static boolean isEven(int n) {
         return n % 2 == 0;

@@ -13,14 +13,14 @@ public class Progression {
     static final int LOWER_STEP_BOUND = 1;
     static final int UPPER_STEP_BOUND = 6;
     static final String RULES = "What number is missing in the progression?";
-    public static void startGame(String userName) {
+    public static void startGame() {
         String[][] questionsAnswers = new String[2][Engine.ROUNDS_COUNT];
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             String[] questionAnswer = questionAnswer();
             questionsAnswers[QUESTION_ID][i] = questionAnswer[QUESTION_ID];
             questionsAnswers[ANSWER_ID][i] = questionAnswer[ANSWER_ID];
         }
-        Engine.startGame(RULES, questionsAnswers, userName);
+        Engine.startGame(RULES, questionsAnswers);
     }
     static String[] questionAnswer() {
         var progression = generateProgression();

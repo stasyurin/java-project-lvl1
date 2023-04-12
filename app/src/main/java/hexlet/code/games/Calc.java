@@ -11,14 +11,14 @@ public class Calc {
     static final int UPPER_RANDOM_BOUND = 101;
     static final String RULES = "What is the result of the expression?";
     static final char[] OPERATORS = {'+', '-', '*'};
-    public static void startGame(String userName) {
+    public static void startGame() {
         String[][] questionsAnswers = new String[2][Engine.ROUNDS_COUNT];
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             String[] questionAnswer = questionAnswer();
             questionsAnswers[QUESTION_ID][i] = questionAnswer[QUESTION_ID];
             questionsAnswers[ANSWER_ID][i] = questionAnswer[ANSWER_ID];
         }
-        Engine.startGame(RULES, questionsAnswers, userName);
+        Engine.startGame(RULES, questionsAnswers);
     }
     static String[] questionAnswer() {
         var operatorIndex = RandomUtils.nextInt(0, OPERATORS.length - 1);

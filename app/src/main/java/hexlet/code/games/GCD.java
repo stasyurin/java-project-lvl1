@@ -10,14 +10,14 @@ public class GCD {
     static final int LOWER_RANDOM_BOUND = 1;
     static final int UPPER_RANDOM_BOUND = 101;
     static final String RULES = "Find the greatest common divisor of given numbers.";
-    public static void startGame(String userName) {
+    public static void startGame() {
         String[][] questionsAnswers = new String[2][Engine.ROUNDS_COUNT];
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             String[] questionAnswer = questionAnswer();
             questionsAnswers[QUESTION_ID][i] = questionAnswer[QUESTION_ID];
             questionsAnswers[ANSWER_ID][i] = questionAnswer[ANSWER_ID];
         }
-        Engine.startGame(RULES, questionsAnswers, userName);
+        Engine.startGame(RULES, questionsAnswers);
     }
     static String[] questionAnswer() {
         var num1 = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
