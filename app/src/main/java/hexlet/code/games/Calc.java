@@ -4,7 +4,6 @@ import hexlet.code.Engine;
 import org.apache.commons.lang3.RandomUtils;
 
 import static hexlet.code.Constants.ANSWER_ID;
-import static hexlet.code.Constants.POINTS_TO_WIN;
 import static hexlet.code.Constants.QUESTION_ID;
 
 public class Calc {
@@ -13,8 +12,8 @@ public class Calc {
     static final String RULES = "What is the result of the expression?";
     static final char[] OPERATORS = {'+', '-', '*'};
     public static void startGame(String userName) {
-        String[][] questionsAnswers = new String[2][POINTS_TO_WIN];
-        for (int i = 0; i < POINTS_TO_WIN; i++) {
+        String[][] questionsAnswers = new String[2][Engine.ROUNDS_COUNT];
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             String[] questionAnswer = questionAnswer();
             questionsAnswers[QUESTION_ID][i] = questionAnswer[QUESTION_ID];
             questionsAnswers[ANSWER_ID][i] = questionAnswer[ANSWER_ID];
