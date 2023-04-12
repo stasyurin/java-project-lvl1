@@ -11,17 +11,13 @@ public class GCD {
     static final int UPPER_RANDOM_BOUND = 101;
     static final String RULES = "Find the greatest common divisor of given numbers.";
     public static void startGame(String userName) {
-        var rules = rules();
         String[][] questionsAnswers = new String[2][POINTS_TO_WIN];
         for (int i = 0; i < POINTS_TO_WIN; i++) {
             String[] questionAnswer = questionAnswer();
             questionsAnswers[QUESTION_ID][i] = questionAnswer[QUESTION_ID];
             questionsAnswers[ANSWER_ID][i] = questionAnswer[ANSWER_ID];
         }
-        Engine.startGame(rules, questionsAnswers, userName);
-    }
-    static String rules() {
-        return RULES;
+        Engine.startGame(RULES, questionsAnswers, userName);
     }
     static String[] questionAnswer() {
         var num1 = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);

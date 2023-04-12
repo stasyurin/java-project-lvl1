@@ -12,17 +12,13 @@ public class Calc {
     static final String RULES = "What is the result of the expression?";
     static final String[] OPERATORS = {"+", "-", "*"};
     public static void startGame(String userName) {
-        var rules = rules();
         String[][] questionsAnswers = new String[2][POINTS_TO_WIN];
         for (int i = 0; i < POINTS_TO_WIN; i++) {
             String[] questionAnswer = questionAnswer();
             questionsAnswers[QUESTION_ID][i] = questionAnswer[QUESTION_ID];
             questionsAnswers[ANSWER_ID][i] = questionAnswer[ANSWER_ID];
         }
-        Engine.startGame(rules, questionsAnswers, userName);
-    }
-    static String rules() {
-        return RULES;
+        Engine.startGame(RULES, questionsAnswers, userName);
     }
     static String[] questionAnswer() {
         var operatorIndex = RandomUtils.nextInt(0, OPERATORS.length - 1);
