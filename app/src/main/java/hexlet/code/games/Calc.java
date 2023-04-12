@@ -26,14 +26,14 @@ public class Calc {
         var operand1 = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
         var operand2 = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
         int operationResult;
-        switch (operatorIndex) {
-            case 0 -> {
+        switch (OPERATORS[operatorIndex]) {
+            case "+" -> {
                 operationResult = operand1 + operand2;
             }
-            case 1 -> {
+            case "-" -> {
                 operationResult = operand1 - operand2;
             }
-            case 2 -> {
+            case "*" -> {
                 operationResult = operand1 * operand2;
             }
             default -> {
