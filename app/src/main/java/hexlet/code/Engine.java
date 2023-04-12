@@ -7,7 +7,6 @@ import static hexlet.code.Constants.POINTS_TO_WIN;
 import static hexlet.code.Constants.QUESTION_ID;
 
 public final class Engine {
-
     public static void startGame(String rules, String[][] questionsAnswers, String userName) {
         System.out.println(rules);
         String[] questions = questionsAnswers[QUESTION_ID];
