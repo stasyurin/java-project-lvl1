@@ -3,8 +3,9 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import org.apache.commons.lang3.RandomUtils;
 
-import static hexlet.code.Constants.*;
+import static hexlet.code.Constants.ANSWER_ID;
 import static hexlet.code.Constants.POINTS_TO_WIN;
+import static hexlet.code.Constants.QUESTION_ID;
 
 public class GCD {
     static final int LOWER_RANDOM_BOUND = 1;
