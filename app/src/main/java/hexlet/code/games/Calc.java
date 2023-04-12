@@ -11,7 +11,7 @@ public class Calc {
     static final int LOWER_RANDOM_BOUND = 1;
     static final int UPPER_RANDOM_BOUND = 101;
     static final String RULES = "What is the result of the expression?";
-    static final String[] OPERATORS = {"+", "-", "*"};
+    static final char[] OPERATORS = {'+', '-', '*'};
     public static void startGame(String userName) {
         String[][] questionsAnswers = new String[2][POINTS_TO_WIN];
         for (int i = 0; i < POINTS_TO_WIN; i++) {
@@ -27,13 +27,13 @@ public class Calc {
         var operand2 = RandomUtils.nextInt(LOWER_RANDOM_BOUND, UPPER_RANDOM_BOUND);
         int operationResult;
         switch (OPERATORS[operatorIndex]) {
-            case "+" -> {
+            case '+' -> {
                 operationResult = operand1 + operand2;
             }
-            case "-" -> {
+            case '-' -> {
                 operationResult = operand1 - operand2;
             }
-            case "*" -> {
+            case '*' -> {
                 operationResult = operand1 * operand2;
             }
             default -> {
