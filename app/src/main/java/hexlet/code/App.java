@@ -22,15 +22,14 @@ public class App {
         System.out.print("Your choice: ");
         Scanner in = new Scanner(System.in);
         var noOfGame = in.nextLine();
-        if (noOfGame.equals("0")) {
-            return;
-        } else if (noOfGame.equals("1")) {
-            Cli.greet();
-            return;
-        }
         System.out.println();
 
         switch (noOfGame) {
+            case "0" -> {
+            }
+            case "1" -> {
+                Cli.greet();
+            }
             case "2" -> {
                 Even.startGame();
             }
